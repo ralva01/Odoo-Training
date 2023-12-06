@@ -27,6 +27,7 @@
         'security/ir.model.access.csv',
         'views/menu_training.xml',
         'views/siswa.xml',
+        'views/orangtua.xml',
         'views/provinsi.xml',
         'views/kota.xml',
     ],

@@ -11,6 +11,7 @@
                 <!-- Add your fields here -->
                 <field name="name"/>
                 <field name="singkatan"/>
+                <field name="provinsi_id"/>
             </tree>
         </field>
        </record>
@@ -26,6 +27,8 @@
                         <!-- Add your fields here -->
                         <field name="name"/>
                         <field name="singkatan"/>
+                        <field name="provinsi_id"/>
+                        
                     </group>
                 </sheet>
             </form>
@@ -34,7 +37,7 @@
 
        <!-- cdn.kota action window --> <!--oact-->
        <record id="cdn_kota_action" model="ir.actions.act_window">
-        <field name="name">cdn.kota.action</field>
+        <field name="name">Master Kota</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">cdn.kota</field>
         <field name="view_mode">tree,form</field>

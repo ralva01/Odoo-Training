@@ -26,6 +26,8 @@
                         <!-- Add your fields here -->
                         <field name="name"/>
                         <field name="singkatan"/>
+                        <field name="kota_ids"/>
+                        
                     </group>
                 </sheet>
             </form>
@@ -34,7 +36,7 @@
 
        <!-- cdn.provinsi action window --> <!--oact-->
        <record id="cdn_provinsi_action" model="ir.actions.act_window">
-        <field name="name">cdn.provinsi.action</field>
+        <field name="name">Master Provinsi</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">cdn.provinsi</field>
         <field name="view_mode">tree,form</field>

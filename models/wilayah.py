@@ -8,6 +8,8 @@ class CdnProvinsi(models.Model):
 
     name = fields.Char(string='Provinsi')
     singkatan = fields.Char(string='Singkatan')
+    kota_ids = fields.One2many(comodel_name='cdn.kota', inverse_name='provinsi_id', string='Daftar Kota')
+    
 
 
 
