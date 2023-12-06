@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data> 
+       <!-- cdn.provinsi tree view --> <!--otree-->
+       <record id="cdn_provinsi_view_tree" model="ir.ui.view">
+        <field name="name">cdn.provinsi.view.tree</field>
+        <field name="model">cdn.provinsi</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="singkatan"/>
+            </tree>
+        </field>
+       </record>
+
+       <!-- cdn.provinsi form view --> <!--oform-->
+       <record id="cdn_provinsi_view_form" model="ir.ui.view">
+        <field name="name">cdn.provinsi.view.form</field>
+        <field name="model">cdn.provinsi</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="singkatan"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+       </record>
+
+       <!-- cdn.provinsi action window --> <!--oact-->
+       <record id="cdn_provinsi_action" model="ir.actions.act_window">
+        <field name="name">cdn.provinsi.action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cdn.provinsi</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+            </p><p>
+                <!-- More details about what a user can do with this object will be OK --> 
+            
+            </p>
+        </field>
+       </record>
+
+       <!-- This Menu Item must have a parent and an action -->
+       <menuitem id="provinsi_menu_act" name="Provinsi" parent="master_menu_categ" action="cdn_provinsi_action" sequence="2"/>
+
+        
+    
+    </data>
+    
+
+</odoo>

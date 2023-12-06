@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_user_siswa,access_user_siswa,model_cdn_siswa,,1,1,1,1
+access_user_provinsi,access_user_provinsi,model_cdn_provinsi,,1,1,1,1
+access_user_kota,access_user_kota,model_cdn_kota,,1,1,1,1
