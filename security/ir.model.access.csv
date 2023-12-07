@@ -3,3 +3,5 @@ access_user_siswa,access_user_siswa,model_cdn_siswa,,1,1,1,1
 access_user_provinsi,access_user_provinsi,model_cdn_provinsi,,1,1,1,1
 access_user_kota,access_user_kota,model_cdn_kota,,1,1,1,1
 access_user_orangtua,access_user_orangtua,model_cdn_orangtua,,1,1,1,1
+access_user_guru,access_user_guru,model_cdn_guru,,1,1,1,1
+access_user_kelas,access_user_kelas,model_cdn_kelas,,1,1,1,1

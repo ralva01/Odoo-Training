@@ -1,49 +1,41 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <data>
-        <!-- cdn.siswa tree view -->
-        <record id="cdn_siswa_view_tree" model="ir.ui.view">
-            <field name="name">cdn.siswa.view.tree</field>
-            <field name="model">cdn.siswa</field>
+        <!-- cdn.guru tree view -->
+        <record id="cdn_guru_view_tree" model="ir.ui.view">
+            <field name="name">cdn.guru.view.tree</field>
+            <field name="model">cdn.guru</field>
             <field name="arch" type="xml">
                 <tree>
                     <!-- Add your fields here -->
                     <field name="name"/>
-                    <field name="nis"/>
+                    <field name="nip"/>
                     <field name="jenis_kel"/>
                     <field name="agama"/>
                     <field name="tmp_lahir"/>
                     <field name="tgl_lahir"/>
                     <field name="no_tlp"/>
                     <field name="alamat"/>
-                    <field name="ayah_id"/>
-                    <field name="ibu_id"/>
-                    <field name="kota_id"/>
                     <field name="provinsi_id"/>
+                    <field name="kota_id"/>
+                    
                 </tree>
             </field>
         </record>    
-        <!-- cdn.siswa form view -->
-        <record id="cdn_siswa_view_form" model="ir.ui.view">
-            <field name="name">cdn.siswa.view.form</field>
-            <field name="model">cdn.siswa</field>
+        <!-- cdn.guru form view -->
+        <record id="cdn_guru_view_form" model="ir.ui.view">
+            <field name="name">cdn.guru.view.form</field>
+            <field name="model">cdn.guru</field>
             <field name="arch" type="xml">
                 <form string="">
                     <sheet>
-                        <group string = 'Data Siswa'>
+                        <group string = 'Data guru'>
                             <!-- Add your fields here -->
                             <group>
                                 <field name="name"/>
-                                <field name="nis"/>
+                                <field name="nip"/>
                                 <field name="jenis_kel"/>
                                 <field name="agama"/>
-                            </group>
-                            <group string="Nama Orang Tua">
-                                <field name="ayah_id" domain= "[('jenis_kel','=','l')]"/>
-                                <field name="ibu_id" domain= "[('jenis_kel','=','P')]"/>
-                            </group>
-                            <group string="Nama Kelas">
-                                <field name="kelas_id"/>
                             </group>
                             <group>
                                 <field name="tmp_lahir"/>
@@ -55,7 +47,7 @@
                         <group string="Alamat Lengkap">
                             <field name="alamat"/>
                             <field name="provinsi_id"/>
-                            <field name="kota_id" domain= "[('provinsi_id','=',provinsi_id)]" />
+                            <field name="kota_id" domain= "[('provinsi_id','=',provinsi_id)]"/>
                         </group>
 
                     </sheet>
@@ -63,11 +55,11 @@
             </field>
         </record>
 
-        <!-- cdn.siswa action window -->
-        <record id="cdn_siswa_action" model="ir.actions.act_window">
-            <field name="name">Master Data Siswa</field>
+        <!-- cdn.guru action window -->
+        <record id="cdn_guru_action" model="ir.actions.act_window">
+            <field name="name">Master Data guru</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">cdn.siswa</field>
+            <field name="res_model">cdn.guru</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
@@ -80,7 +72,7 @@
         </record>
 
         <!-- This Menu Item must have a parent and an action -->
-        <menuitem id="siswa_menu_act" name="Siswa" parent="master_menu_categ" action="cdn_siswa_action" sequence="1"/>
+        <menuitem id="guru_menu_act" name="guru" parent="master_menu_categ" action="cdn_guru_action" sequence="5"/>
         
     
     </data>

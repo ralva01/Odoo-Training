@@ -30,6 +30,8 @@
         'views/orangtua.xml',
         'views/provinsi.xml',
         'views/kota.xml',
+        'views/guru.xml',
+        'views/kelas.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

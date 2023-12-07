@@ -15,8 +15,8 @@ class CdnOrangtua(models.Model):
     no_tlp = fields.Char(string='No Handphone')
     alamat = fields.Text(string='Alamat Lengkap')
     
-    siswa_ids = fields.One2many(comodel_name='cdn.siswa', inverse_name='orangtua_id', string='Nama Siswa')
-    
+    #siswa_ids = fields.One2many(comodel_name='cdn.siswa', inverse_name='ayah_id', string='Nama Siswa')
+    #siswa_ids = fields.One2many(comodel_name='cdn.siswa', inverse_name='ibu_id', string='Nama Siswa')
 
     provinsi_id = fields.Many2one(comodel_name='cdn.provinsi', string='Provinsi')
     kota_id = fields.Many2one(comodel_name='cdn.kota', string='Kota')

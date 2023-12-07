@@ -47,12 +47,13 @@
                         <group string="Alamat Lengkap">
                             <field name="alamat"/>
                             <field name="provinsi_id"/>
-                            <field name="kota_id"/>
+                            <field name="kota_id" domain= "[('provinsi_id','=',provinsi_id)]"/>
                         </group>
 
+                        <!--
                         <group string="Nama Siswa">
                             <field name="siswa_ids"/>
-                        </group>
+                        </group>-->
 
                     </sheet>
                 </form>
