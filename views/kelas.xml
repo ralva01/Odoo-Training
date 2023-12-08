@@ -11,7 +11,8 @@
                 <tree>
                     <!-- Add your fields-->
                         <field name="nama_kel"/>
-                        <field name="guru_id"/>  
+                        <!--<field name="guru_id"/>-->
+                        <field name="wali_kelas_id"/>
                 </tree>
             </field>
         </record>
@@ -27,7 +28,9 @@
                    <group string="Nama Kelas">
                         <group  string="Detail Kelas">
                             <field name="nama_kel"/>
-                            <field name="guru_id"/>  
+                            <!--<field name="guru_id"/>-->
+                            <field name="wali_kelas_id" domain="[('id', '!=', wali_kelas_id)]"/>
+                            <field name="jumlah_siswa"/>
                         </group>
                             <field name="details_id"/>
                     </group>

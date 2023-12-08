@@ -17,5 +17,8 @@ class CdnGuru(models.Model):
     provinsi_id = fields.Many2one(comodel_name='cdn.provinsi', string='Provinsi')
     kota_id = fields.Many2one(comodel_name='cdn.kota', string='Kota')
 
+    #kelas_id = fields.Many2one(comodel_name='cdn.kelas', string='Kelas') <--tidak dipakai
+    
+
 
     
