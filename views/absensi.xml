@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- cdn.absensi tree view -->
+        <record id="cdn_absensi_view_tree" model="ir.ui.view">
+            <field name="name">cdn.absensi.view.tree</field>
+            <field name="model">cdn.absensi</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="tanggal_absen"/>
+                    <field name="kelas_id"/>
+                    <field name="keterangan"/>
+                </tree>
+            </field>
+        </record>
+            <!-- cdn.absensi form view -->
+            <record id="cdn_absensi_view_form" model="ir.ui.view">
+                <field name="name">cdn.absensi.view.form</field>
+                <field name="model">cdn.absensi</field>
+                <field name="arch" type="xml">
+                    <form string="Absensi Siswa">
+                        <sheet>
+                            <group>
+                                <!-- Add your fields here -->
+                                <group string="Absensi">
+                                    <field name="name"/>
+                                    <field name="kelas_id"/>
+                                    <field name="tanggal_absen"/>
+                                </group>
+                                <group string="Keterangan">
+                                    <field name="keterangan"/>
+                                </group>
+                                <group string="Kelas">
+                                    <field name="siswa_ids"/>
+                                </group>
+                                
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+                <!-- cdn.absensi action window -->
+                <record id="cdn_absensi_action" model="ir.actions.act_window">
+                    <field name="name">Absensi Siswa</field>
+                    <field name="type">ir.actions.act_window</field>
+                    <field name="res_model">cdn.absensi</field>
+                    <field name="view_mode">tree,form</field>
+                    <field name="help" type="html">
+                        <p class="oe_view_nocontent_create">
+                            <!-- Add Text Here -->
+                        </p><p>
+                            <!-- More details about what a user can do with this object will be OK --> 
+                        
+                        </p>
+                    </field>
+                </record>
+
+                <!-- This Menu Item must have a parent and an action -->
+                <menuitem id="absensi_menu_act" name="absensi" parent="master_menu_categ" action="cdn_absensi_action" sequence="8"/>
+    
+    </data>
+    
+</odoo>

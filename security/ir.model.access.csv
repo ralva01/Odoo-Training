@@ -5,3 +5,5 @@ access_user_kota,access_user_kota,model_cdn_kota,,1,1,1,1
 access_user_orangtua,access_user_orangtua,model_cdn_orangtua,,1,1,1,1
 access_user_guru,access_user_guru,model_cdn_guru,,1,1,1,1
 access_user_kelas,access_user_kelas,model_cdn_kelas,,1,1,1,1
+access_user_matapelajaran,access_user_matapelajaran,model_cdn_mata_pelajaran,,1,1,1,1
+access_user_absensi,access_user_absensi,model_cdn_absensi,,1,1,1,1

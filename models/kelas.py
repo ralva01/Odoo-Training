@@ -16,21 +16,37 @@ class CdnKelas(models.Model):
         ]
     )
     
-    #guru_id = fields.Many2one(comodel_name='cdn.guru', string='Wali Kelas')
-    details_id = fields.Many2many(comodel_name='cdn.siswa', string='Nama Siswa')
+    details_id = fields.Many2many(comodel_name='cdn.siswa', string='Nama Siswa', domain="[('id', 'not in', details_id)]")
     wali_kelas_id = fields.Many2one(comodel_name='cdn.guru', string='Wali Kelas')
-    
-     # Computed field untuk menghitung jumlah siswa
-    jumlah_siswa = fields.Integer(string='Jumlah Siswa', compute='_compute_jumlah_siswa', store=True)
+    absensi_ids = fields.One2many(comodel_name='cdn.absensi', inverse_name='kelas_id', string='Absensi')
 
-    @api.depends('details_id')
-    def _compute_jumlah_siswa(self):
+    #jumlah_siswa = fields.Integer(string='Jumlah Siswa', compute='_compute_jumlah_siswa', store=True)
+    jumlah_siswa_laki_laki = fields.Integer(string='Jumlah Siswa Laki-laki', compute='_compute_jumlah_siswa_per_jenis_kelamin', store=True)
+    jumlah_siswa_perempuan = fields.Integer(string='Jumlah Siswa Perempuan', compute='_compute_jumlah_siswa_per_jenis_kelamin', store=True)
+    
+    #@api.depends('details_id')
+    #def _compute_jumlah_siswa(self):
+        #for kelas in self:
+            #kelas.jumlah_siswa = len(kelas.details_id)
+
+    @api.depends('details_id.jenis_kel')
+    def _compute_jumlah_siswa_per_jenis_kelamin(self):
         for kelas in self:
-            kelas.jumlah_siswa = len(kelas.details_id)
+            siswa_laki_laki = kelas.details_id.filtered(lambda x: x.jenis_kel == 'l')
+            siswa_perempuan = kelas.details_id.filtered(lambda x: x.jenis_kel == 'P')
+            kelas.jumlah_siswa_laki_laki = len(siswa_laki_laki)
+            kelas.jumlah_siswa_perempuan = len(siswa_perempuan)
 
+    @api.onchange('details_id')
+    def _onchange_details_id(self):
+         #Proses penyimpanan perubahan ke tabel siswa
+        #Misalnya, menyimpan perubahan ke field di tabel siswa
+        for siswa in self.details_id:
+            siswa.write({'kelas_id': self.id})
 
-
-
-
-    
-    
+    #@api.ondelete(at_uninstall=True)
+    #def _ondelete_cdn_kelas(self):
+        # Proses yang ingin Anda lakukan saat model cdn.kelas dihapus
+        # Misalnya, menghapus referensi kelas_id pada semua siswa yang terkait
+        #for siswa in self.details_id:
+            #siswa.write({'kelas_id': False})

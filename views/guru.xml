@@ -18,6 +18,7 @@
                     <field name="alamat"/>
                     <field name="provinsi_id"/>
                     <field name="kota_id"/>
+                    <field name="is_wali_kelas"/>
                     
                 </tree>
             </field>
@@ -48,6 +49,11 @@
                             <field name="alamat"/>
                             <field name="provinsi_id"/>
                             <field name="kota_id" domain= "[('provinsi_id','=',provinsi_id)]"/>
+                        </group>
+
+                         <!-- Add the new field is_wali_kelas to the view -->
+                        <group string="Wali Kelas" attrs="{'invisible': [('is_wali_kelas', '=', False)]}">
+                            <field name="is_wali_kelas"/>
                         </group>
 
                     </sheet>

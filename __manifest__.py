@@ -32,6 +32,8 @@
         'views/kota.xml',
         'views/guru.xml',
         'views/kelas.xml',
+        'views/matapelajaran.xml',
+        'views/absensi.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

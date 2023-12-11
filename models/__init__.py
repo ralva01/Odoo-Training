@@ -5,3 +5,5 @@ from . import wilayah
 from . import orangtua
 from . import guru
 from . import kelas
+from . import matapelajaran
+from . import absensi

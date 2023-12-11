@@ -13,6 +13,8 @@
                         <field name="nama_kel"/>
                         <!--<field name="guru_id"/>-->
                         <field name="wali_kelas_id"/>
+                        <field name="jumlah_siswa_laki_laki"/>
+                        <field name="jumlah_siswa_perempuan"/>
                 </tree>
             </field>
         </record>
@@ -30,9 +32,14 @@
                             <field name="nama_kel"/>
                             <!--<field name="guru_id"/>-->
                             <field name="wali_kelas_id" domain="[('id', '!=', wali_kelas_id)]"/>
-                            <field name="jumlah_siswa"/>
+                            <field name="jumlah_siswa_laki_laki"/>
+                            <field name="jumlah_siswa_perempuan"/>
+
                         </group>
+                           
                             <field name="details_id"/>
+                            
+                           
                     </group>
 
                 </sheet>

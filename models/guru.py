@@ -16,9 +16,15 @@ class CdnGuru(models.Model):
     alamat = fields.Text(string='Alamat Lengkap')
     provinsi_id = fields.Many2one(comodel_name='cdn.provinsi', string='Provinsi')
     kota_id = fields.Many2one(comodel_name='cdn.kota', string='Kota')
-
-    #kelas_id = fields.Many2one(comodel_name='cdn.kelas', string='Kelas') <--tidak dipakai
     
+     # Relasi ke kelas (One2many)
+    kelas_id = fields.One2many(comodel_name='cdn.kelas', inverse_name='wali_kelas_id', string='Kelas')
+    # Field Boolean untuk menandai apakah guru sudah menjadi wali kelas atau belum
+    is_wali_kelas = fields.Boolean(string='Wali Kelas', compute='_compute_is_wali_kelas', store=True)
+    mata_pelajaran_ids = fields.One2many(comodel_name='cdn.mata_pelajaran', inverse_name='guru_id', string='Mata Pelajaran')
 
-
+    @api.depends('kelas_id')
+    def _compute_is_wali_kelas(self):
+        for guru in self:
+            guru.is_wali_kelas = bool(guru.kelas_id)
     

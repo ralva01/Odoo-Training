@@ -16,6 +16,7 @@
                     <field name="tgl_lahir"/>
                     <field name="no_tlp"/>
                     <field name="alamat"/>
+                    <field name="kelas_id"/>
                     <field name="ayah_id"/>
                     <field name="ibu_id"/>
                     <field name="kota_id"/>
@@ -28,7 +29,7 @@
             <field name="name">cdn.siswa.view.form</field>
             <field name="model">cdn.siswa</field>
             <field name="arch" type="xml">
-                <form string="">
+                <form string="Master Data Siswa">
                     <sheet>
                         <group string = 'Data Siswa'>
                             <!-- Add your fields here -->
@@ -38,17 +39,17 @@
                                 <field name="jenis_kel"/>
                                 <field name="agama"/>
                             </group>
-                            <group string="Nama Orang Tua">
-                                <field name="ayah_id" domain= "[('jenis_kel','=','l')]"/>
-                                <field name="ibu_id" domain= "[('jenis_kel','=','P')]"/>
-                            </group>
-                            <group string="Nama Kelas">
-                                <field name="kelas_id"/>
-                            </group>
                             <group>
                                 <field name="tmp_lahir"/>
                                 <field name="tgl_lahir"/>
                                 <field name="no_tlp"/>
+                            </group>
+                            <group string="Kelas">
+                                <field name="kelas_id" attrs="{'invisible': [('kelas_id', '=', False)]}"/>
+                            </group>
+                            <group string="Nama Orang Tua">
+                                <field name="ayah_id" domain= "[('jenis_kel','=','l')]"/>
+                                <field name="ibu_id" domain= "[('jenis_kel','=','P')]"/>
                             </group>
                         </group>
 

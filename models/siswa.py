@@ -19,25 +19,6 @@ class CdnSiswa(models.Model):
     
     ayah_id = fields.Many2one(comodel_name='cdn.orangtua', string='Ayah')
     ibu_id = fields.Many2one(comodel_name='cdn.orangtua', string='Ibu')
-
-    #kelas_id = fields.One2many(comodel_name='cdn.kelas', inverse_name='details_id', string='Kelas') #<-- Tidak Dipakai
-    kelas_id = fields.Many2many(comodel_name='cdn.kelas', string='Kelas')
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    kelas_id = fields.Many2one(comodel_name='cdn.kelas', string='kelas')
+    #kelas_id = fields.One2many(comodel_name='cdn.kelas', inverse_name='details_id',)
+    absensi_ids = fields.Many2many(comodel_name='cdn.absensi', string='Absensi')
